@@ -11,7 +11,7 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->app->singleton(Sender::class, function ($app) {
-            $options = $app['config']->get('apn-push');
+            $options = config('apn-push');
 
             return $this->jwtAuth($options);
         });
