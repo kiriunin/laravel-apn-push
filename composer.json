@@ -1,7 +1,7 @@
 {
     "name": "kiriunin/laravel-apn-push",
     "description": "Push notifications to Apple devices for Laravel",
-    "keywords": ["apple", "push", "apn", "notifications", "laravel"],
+    "keywords": ["laravel", "apple", "push", "apn", "notifications"],
     "license": "MIT",
     "authors": [
         {
@@ -12,7 +12,7 @@
     "type": "library",
     "require": {
 		"php": "^7.1",
-        "illuminate/support": "5.3.x|5.4.x|5.5.x|5.6.x",
+        "illuminate/support": "5.6.x",
         "apple/apn-push": "^3.0",
         "web-token/jwt-key-mgmt": "^1.1",
         "web-token/jwt-signature": "^1.1"
