@@ -16,7 +16,7 @@ class ServiceProvider extends BaseServiceProvider
             return $this->jwtAuth($options);
         });
 
-        $this->app->alias(Sender::class, 'apn-push');
+        $this->app->alias(Sender::class, 'ApnService');
     }
 
     public function boot()

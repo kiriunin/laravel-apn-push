@@ -31,7 +31,7 @@
                 "Kiriunin\\LaravelApnPush\\ServiceProvider"
             ],
             "aliases": {
-                "APN": "Kiriunin\\LaravelApnPush\\Facade\\Apn"
+                "APN": "Kiriunin\\LaravelApnPush\\Facade\\APN"
             }
         }
     }
