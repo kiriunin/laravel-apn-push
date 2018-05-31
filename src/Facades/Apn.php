@@ -6,6 +6,6 @@ class Apn extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'apple-apn';
+        return 'apn-push';
     }
 }

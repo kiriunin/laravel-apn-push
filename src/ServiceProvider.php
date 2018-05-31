@@ -11,17 +11,17 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->app->singleton(Sender::class, function ($app) {
-            $options = config('apn-push');
+            $options = $app['config']->get('apn-push');
 
             return $this->jwtAuth($options);
         });
 
-        $this->app->alias(Sender::class, 'apple-apn');
+        $this->app->alias(Sender::class, 'apn-push');
     }
 
     public function boot()
     {
-        $this->publishes([$this->configPath() => config_path('apple-apn.php')]);
+        $this->publishes([$this->configPath() => config_path('apn-push.php')]);
     }
 
     protected function jwtAuth(array $options): Sender
