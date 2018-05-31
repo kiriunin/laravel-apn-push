@@ -23,7 +23,7 @@ class ServiceProvider extends BaseServiceProvider
 
     public function boot()
     {
-        $this->publishes([$this->configPath() => config_path('cors.php')]);
+        $this->publishes([$this->configPath() => config_path('apple-apn.php')]);
     }
 
     protected function jwtAuth(array $options): Sender
