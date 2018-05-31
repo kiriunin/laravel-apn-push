@@ -10,8 +10,6 @@ class ServiceProvider extends BaseServiceProvider
 {
     public function register()
     {
-        $this->mergeConfigFrom($this->configPath(), 'apn-push');
-
         $this->app->singleton(Sender::class, function ($app) {
             $options = $app['config']->get('apn-push');
 
