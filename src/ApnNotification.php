@@ -12,40 +12,45 @@ use Apple\ApnPush\Model\Priority;
 class ApnNotification
 {
     /** @var string */
-    protected $title;
+    protected $title = '';
 
     /** @var string */
-    protected $body;
+    protected $body = '';
 
     /** @var string */
-    protected $launchImage;
+    protected $launchImage = '';
 
     /** @var string */
-    protected $badge;
+    protected $badge = 0;
 
     /** @var string */
     protected $sound = 'default';
 
     /** @var string */
-    protected $threadId;
+    protected $threadId = '';
 
-    /** @var string */
-    protected $contentAvailable;
+    /** @var bool */
+    protected $contentAvailable = false;
 
     /** @var array */
     protected $customData = [];
 
     /** @var \DateTime */
-    protected $expiration;
+    protected $expiration = '';
 
     /** @var Priority */
     protected $priority;
 
     /** @var string */
-    protected $apnId;
+    protected $apnId = '';
 
     /** @var string */
-    protected $collapseId;
+    protected $collapseId = '';
+
+    public function __construct()
+    {
+        $this->priority = Priority::immediately();
+    }
 
     /**
      * @param string $title
@@ -114,10 +119,10 @@ class ApnNotification
     }
 
     /**
-     * @param string $contentAvailable
+     * @param bool $contentAvailable
      * @return ApnNotification
      */
-    public function setContentAvailable(string $contentAvailable): ApnNotification
+    public function setContentAvailable(bool $contentAvailable): ApnNotification
     {
         $this->contentAvailable = $contentAvailable;
 
