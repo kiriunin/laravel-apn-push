@@ -35,8 +35,8 @@ class ApnNotification
     /** @var array */
     protected $customData = [];
 
-    /** @var \DateTime */
-    protected $expiration = '';
+    /** @var \DateTime|null */
+    protected $expiration = null;
 
     /** @var Priority */
     protected $priority;
