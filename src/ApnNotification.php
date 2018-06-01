@@ -36,21 +36,16 @@ class ApnNotification
     protected $customData = [];
 
     /** @var \DateTime|null */
-    protected $expiration = null;
+    protected $expiration;
 
     /** @var Priority */
     protected $priority;
 
-    /** @var string */
-    protected $apnId = '';
+    /** @var ApnId|null */
+    protected $apnId;
 
-    /** @var string */
-    protected $collapseId = '';
-
-    public function __construct()
-    {
-        $this->priority = Priority::immediately();
-    }
+    /** @var CollapseId|null */
+    protected $collapseId;
 
     /**
      * @param string $title
@@ -244,7 +239,7 @@ class ApnNotification
         return (new Notification($payload))
             ->withExpiration(new Expiration($this->expiration))
             ->withPriority($this->priority)
-            ->withApnId(new ApnId($this->apnId))
-            ->withCollapseId(new CollapseId($this->collapseId));
+            ->withApnId($this->apnId)
+            ->withCollapseId($this->collapseId);
     }
 }
