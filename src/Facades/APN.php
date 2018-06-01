@@ -6,6 +6,6 @@ class APN extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'ApnService';
+        return 'APN';
     }
 }
