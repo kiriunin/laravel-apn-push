@@ -1,27 +1,27 @@
 <?php
 
 return [
-    /*
-    |--------------------------------------------------------------------------
-    | Laravel APN push
-    |--------------------------------------------------------------------------
-    */
+    'default_apn' => 'default',
 
-    'default' => env('APN_CONNECTION', 'jwt'),
+    'apns' => [
+        'default' => [
+            'bundle_id' => env('APN_BUNDLE_ID', ''),
+            'sandbox'       => env('APN_SANDBOX', false),
 
-    'packageId' => env('APN_PACKAGE_ID', null),
+            'authenticator' => [
+                // For use JWT authenticator
+                'jwt' => [
+                    'teamId'          => env('APN_TEAM_ID', ''),
+                    'key'             => env('APN_KEY', ''),
+                    'certificatePath' => env('APN_CERTIFICATE_PATH', ''),
+                ],
 
-    'sandbox' => env('APN_SANDBOX', false),
-
-    'connections' => [
-        'jwt' => [
-            'teamId' => env('APN_TEAM_ID', ''),
-            'key' => env('APN_KEY', ''),
-            'certificatePath' => env('APN_CERTIFICATE', ''),
+                // For use Certificate authenticator
+                //'certificate' => [
+                //    'path'       => env('APN_CERTIFICATE_PATH', ''),
+                //    'passphrase' => env('APN_CERTIFICATE_PASSPHRASE', ''),
+                //],
+            ],
         ],
-        'certificate' => [
-            'certificatePath' => env('APN_CERTIFICATE', ''),
-            'passphrase' => env('APN_CERTIFICATE', ''),
-        ]
-    ]
+    ],
 ];

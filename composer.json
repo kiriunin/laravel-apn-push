@@ -3,38 +3,55 @@
     "description": "Push notifications to Apple devices for Laravel",
     "keywords": ["laravel", "apple", "push", "apn", "notifications"],
     "license": "MIT",
+    "type": "library",
+
     "authors": [
         {
             "name": "Evgeniy Kiriunin",
             "email": "e@kiriunin.ru"
         }
     ],
-    "type": "library",
+
     "require": {
-		"php": "^7.2",
+        "php": "^7.2",
         "illuminate/support": "5.6.x",
-        "apple/apn-push": "^3.0",
-        "web-token/jwt-key-mgmt": "^1.1",
-        "web-token/jwt-signature": "^1.1"
+        "apple/apn-push": "^3.0"
     },
+
 	"require-dev": {
         "mockery/mockery": "^1.1",
         "orchestra/testbench": "^3.6",
         "phpunit/phpunit": "^7.0"
     },
-	"autoload": {
+
+    "suggest": {
+        "web-token/jwt-key-mgmt": "For use JWT authenticator."
+    },
+
+    "autoload": {
         "psr-4": {
             "Kiriunin\\LaravelApnPush\\": "src/"
         }
     },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Kiriunin\\LaravelApnPush\\Tests\\": "tests/"
+        }
+    },
+
     "extra": {
         "laravel": {
             "providers": [
                 "Kiriunin\\LaravelApnPush\\ApnServiceProvider"
             ],
             "aliases": {
-                "APN": "Kiriunin\\LaravelApnPush\\Facades\\APN"
+                "Apn": "Kiriunin\\LaravelApnPush\\Facades\\Apn"
             }
         }
+    },
+
+    "config": {
+        "bin-dir": "bin"
     }
 }
