@@ -28,7 +28,7 @@
         "web-token/jwt-key-mgmt": "For use JWT authenticator."
     },
 
-	"autoload": {
+    "autoload": {
         "psr-4": {
             "Kiriunin\\LaravelApnPush\\": "src/"
         }
