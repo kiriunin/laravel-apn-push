@@ -1,4 +1,3 @@
-.idea/
-vendor/
+/bin/
+/vendor/
 composer.lock
-.DS_Store

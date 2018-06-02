@@ -1,14 +1,16 @@
-<?php namespace Kiriunin\LaravelApnPush;
+<?php
+
+namespace Kiriunin\LaravelApnPush;
 
 use Illuminate\Notifications\Notification;
-use Kiriunin\LaravelApnPush\Exceptions\CouldNotSendNotification;
+use Kiriunin\LaravelApnPush\Exception\CouldNotSendNotification;
 
 class ApnChannel
 {
-    /** @var APN */
+    /** @var Apn */
     protected $apn;
 
-    public function __construct(APN $apn)
+    public function __construct(Apn $apn)
     {
         $this->apn = $apn;
     }
